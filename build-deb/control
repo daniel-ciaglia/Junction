@@ -7,4 +7,4 @@ Maintainer: Sonny Piers <sonnyp@gnome.org>
 Changed-By: Daniel Ciaglia <daniel@sigterm.de>
 Description: Junction lets you choose the application to open files and links.
 Source: https://github.com/sonnyp/Junction
-Depends: gir1.2-xdp-1.0
+Depends: gir1.2-xdpgtk4-1.0
