@@ -393,3 +393,11 @@ ninja -C build uninstall
 ## License
 
 GPLv3. Please see [COPYING](COPYING) file.
+
+## Debian/Ubuntu package
+
+I took a pretty brutal approach and just grab necessary artefacts from the Flatpak instead of building myself.
+
+:warning: Use with caution, it works on my computer
+
+run `docker build --output type=local,dest=. .` and then `sudo dpkg -i re.sonny.Junction.deb`

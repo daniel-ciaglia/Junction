@@ -1,0 +1,10 @@
+Package: re.sonny.Junction
+Version: 1.8
+Section: base
+Priority: optional
+Architecture: amd64
+Maintainer: Sonny Piers <sonnyp@gnome.org>
+Changed-By: Daniel Ciaglia <daniel@sigterm.de>
+Description: Junction lets you choose the application to open files and links.
+Source: https://github.com/sonnyp/Junction
+Depends: gir1.2-xdpgtk4-1.0
