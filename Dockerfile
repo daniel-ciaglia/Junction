@@ -17,6 +17,7 @@ RUN sed -i 's/\/app/\/usr\/local/g' build-deb/usr/local/bin/re.sonny.Junction
 # add surrounding data
 RUN mkdir -p build-deb/usr/local/share/dbus-1/services
 COPY  data/re.sonny.Junction.service build-deb/usr/local/share/dbus-1/services/
+RUN sed -i "/^Exec=/s#=.*#=\/usr\/local\/bin\/re\.sonny\.Junction --gapplication-service#" build-deb/usr/local/share/dbus-1/services/re.sonny.Junction.service
 
 RUN mkdir -p build-deb/usr/local/share/icons/hicolor/symbolic/apps && mkdir -p build-deb/usr/local/share/icons/hicolor/scalable/apps
 COPY data/icons/re.sonny.Junction-symbolic.svg build-deb/usr/local/share/icons/hicolor/symbolic/apps/
@@ -26,6 +27,7 @@ RUN mkdir -p build-deb/usr/local/share/applications && mkdir -p build-deb/usr/lo
 COPY data/re.sonny.Junction.desktop build-deb/usr/local/share/applications/
 COPY data/re.sonny.Junction.metainfo.xml build-deb/usr/local/share/metainfo/
 COPY data/re.sonny.Junction.gschema.xml build-deb/usr/local/share/glib-2.0/schemas/
+RUN desktop-file-edit --set-key=Exec --set-value="/usr/local/bin/re.sonny.Junction %u" build-deb/usr/local/share/applications/re.sonny.Junction.desktop
 
 # deb build stuff
 RUN mkdir -p build-deb/DEBIAN
